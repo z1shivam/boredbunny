@@ -1,5 +1,5 @@
 let displayNumFact =
-  localStorage.getItem("displayNumFact") === "false" ? false : true;
+  localStorage.getItem("displayNumFact") === "false" ? false : false;
 let displayJoke =
   localStorage.getItem("displayJoke") === "false" ? false : true;
 let displayHindiQuote =

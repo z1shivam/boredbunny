@@ -1,4 +1,4 @@
-let displayNumFact = localStorage.getItem("displayNumFact") === "false" ? false : true;
+let displayNumFact = localStorage.getItem("displayNumFact") === "false" ? false : false;
 let displayJoke = localStorage.getItem("displayJoke") === "false" ? false : true;
 let displayHindiQuote = localStorage.getItem("displayHindiQuote") === "false" ? false : true;
 let displayQuote = localStorage.getItem("displayQuote") === "false" ? false : true;
@@ -103,7 +103,7 @@ async function fetchAndDisplayNumFact() {
 
     mainElement.appendChild(sectionElement);
 
-    const response = await fetch("http://numbersapi.com/random");
+    const response = await fetch("http://numbersapi.com/random/");
     const data = await response.text();
     const quoteElement = sectionElement.querySelector(".numFactElement");
 
