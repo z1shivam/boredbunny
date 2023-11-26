@@ -249,7 +249,7 @@ async function fetchAndDisplayHindiQuote(){
     class="absolute bottom-0 -right-0 w-28"
     alt=""
   />
-  <div class="w-5/6 rounded-md border-2 border-red-200 font-hindi">
+  <div class="w-5/6 rounded-md border-2 border-red-200">
     <h2
       class="bg-red-200 px-2 py-1 font-nanum text-xl font-medium text-red-800"
     >
