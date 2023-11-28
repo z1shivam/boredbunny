@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Nanum+Pen+Script&family=Tiro+Devanagari+Hindi&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Acme&family=Caveat:wght@400;500&family=Inter:wght@300;400;500;600&family=Montserrat&family=Mukta:wght@300;400;500;600;700&family=Nanum+Pen+Script&family=Open+Sans:wght@300;400;500;600;700&family=Satisfy&display=swap";
 *,
 :before,
 :after {
@@ -391,6 +391,9 @@ video {
 .mt-1 {
   margin-top: 0.25rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .flex {
   display: flex;
 }
@@ -458,6 +461,9 @@ video {
 .cursor-pointer {
   cursor: pointer;
 }
+.flex-col {
+  flex-direction: column;
+}
 .items-center {
   align-items: center;
 }
@@ -472,6 +478,9 @@ video {
 }
 .gap-3 {
   gap: 0.75rem;
+}
+.gap-6 {
+  gap: 1.5rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -551,6 +560,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(55 48 163 / var(--tw-bg-opacity));
 }
+.bg-indigo-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 27 75 / var(--tw-bg-opacity));
+}
 .bg-orange-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 215 170 / var(--tw-bg-opacity));
@@ -614,6 +627,13 @@ video {
   padding-top: 11rem;
   padding-bottom: 11rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.pb-12 {
+  padding-bottom: 3rem;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -665,6 +685,10 @@ video {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -676,9 +700,6 @@ video {
 .font-medium {
   font-weight: 500;
 }
-.font-bold{
-  font-weight: 700;
-}
 .text-fuchsia-800 {
   --tw-text-opacity: 1;
   color: rgb(134 25 143 / var(--tw-text-opacity));
@@ -686,6 +707,10 @@ video {
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgb(22 101 52 / var(--tw-text-opacity));
+}
+.text-indigo-300 {
+  --tw-text-opacity: 1;
+  color: rgb(165 180 252 / var(--tw-text-opacity));
 }
 .text-indigo-500 {
   --tw-text-opacity: 1;
