@@ -1,4 +1,4 @@
-let displayNumFact = localStorage.getItem("displayNumFact") === "false" ? false : false;
+let displayNumFact = localStorage.getItem("displayNumFact") === "false" ? false : true;
 let displayJoke = localStorage.getItem("displayJoke") === "false" ? false : true;
 let displayHindiQuote = localStorage.getItem("displayHindiQuote") === "false" ? false : true;
 let displayQuote = localStorage.getItem("displayQuote") === "false" ? false : true;
@@ -82,7 +82,7 @@ async function fetchAndDisplayCatPhoto() {
   dogPicElement.innerHTML = "";
   dogPicElement.appendChild(imgElement);
 }
-async function fetchAndDisplayNumFact() {
+async function fetchAndDisplayFact() {
   try {
     const mainElement = document.getElementById("insertHere");
 
@@ -92,7 +92,7 @@ async function fetchAndDisplayNumFact() {
     const skeleton = `
     <img src="./assets/pageImages/bunny.svg" class="absolute w-32 -left-5 -bottom-1  " alt="">
     <div class="rounded-md border-2 w-5/6 float-right border-pink-200">
-      <h2 class="font-nanum text-2xl px-2 text-pink-800 bg-pink-200 py-1 text-right">A fact about a number</h2>
+      <h2 class="font-nanum text-2xl px-2 text-pink-800 bg-pink-200 py-1 text-right">Did you know?</h2>
       <div class="px-2 py-1">
         <p class="text-base numFactElement pl-3 py-2 text-pink-800 text-right"><br>Loading...<br><br></p>
       </div>
@@ -103,11 +103,11 @@ async function fetchAndDisplayNumFact() {
 
     mainElement.appendChild(sectionElement);
 
-    const response = await fetch("http://numbersapi.com/random/");
-    const data = await response.text();
+    const response = await fetch("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en");
+    const data = await response.json();
     const quoteElement = sectionElement.querySelector(".numFactElement");
 
-    quoteElement.textContent = data;
+    quoteElement.textContent = data.text;
   } catch (error) {
     console.error("Error fetching and displaying num fact:", error);
   }
@@ -285,7 +285,7 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         displayQuote && fetchAndDisplayQuote();
-        displayNumFact && fetchAndDisplayNumFact();
+        displayNumFact && fetchAndDisplayFact();
         displayJoke && fetchAndDisplayJoke();
         displayHindiQuote && fetchAndDisplayHindiQuote();
         displayCatPhoto && fetchAndDisplayCatPhoto();
