@@ -75,7 +75,18 @@ async function fetchAndDisplayCatPhoto() {
   const dogPicElement = sectionElement.querySelector(".dogPicElement");
   const imgElement = document.createElement("img");
   const timestamp = new Date().getTime();
-  imgElement.src = `https://source.unsplash.com/random/300x300/?kitten&${timestamp}`;
+  let imgElSrc;
+  const catImageApiURL = `https://random.imagecdn.app/v1/image?width=300&height=300&category=cats&format=json`;
+  
+  fetch(catImageApiURL)
+    .then((response) => response.json()) // Correctly parse the JSON response
+    .then((data) => {
+      imgElSrc = data.url; // Assign the image URL to imgElSrc
+      imgElement.src = imgElSrc; // Set the imgElement's src
+    })
+    .catch((error) => console.error('Error fetching cat image:', error)); // Handle errors
+
+  // Changed alt of the image
   imgElement.alt = "Random Dog";
   imgElement.classList.add("w-full", "rounded-sm");
 
