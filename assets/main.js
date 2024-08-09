@@ -76,16 +76,17 @@ async function fetchAndDisplayCatPhoto() {
   const imgElement = document.createElement("img");
   const timestamp = new Date().getTime();
   let imgElSrc;
-  const catImageApiURL = `https://random.imagecdn.app/v1/image?width=300&height=300&category=cats&format=json`;
-  
+  const catImageApiURL = `https://api.thecatapi.com/v1/images/search`;
+  console.log(catImageApiURL)
   fetch(catImageApiURL)
     .then((response) => response.json()) // Correctly parse the JSON response
     .then((data) => {
-      imgElSrc = data.url; // Assign the image URL to imgElSrc
+      console.log(data)
+      imgElSrc = data[0].url; // Assign the image URL to imgElSrc
       imgElement.src = imgElSrc; // Set the imgElement's src
     })
     .catch((error) => console.error('Error fetching cat image:', error)); // Handle errors
-
+    console.log(imgElSrc)
   // Changed alt of the image
   imgElement.alt = "Random Dog";
   imgElement.classList.add("w-full", "rounded-sm");
